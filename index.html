@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+  ESAM EL-KHOULY — PORTFOLIO (single-file). Publish: GitHub Pages (repo
+  esamelkholy.github.io) or Netlify drop. Keep "Assets/" capitalized
+  (case-sensitive). Add resume.pdf next to this file.
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Esam El-Khouly — Senior Game / Tools Engineer</title>
+<meta name="description" content="Senior Unity engineer and generalist — gameplay, tools & DevEx, graphics, and build pipelines. Shipped on PC, Meta Quest, and Switch.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0f17; --bg2:#0f1620; --panel:#131c2a; --panel2:#16202e;
+    --text:#eef2f7; --muted:#93a3b4; --rule:#233040; --chip:#1a2636;
+    --accent:#5fcf9b; --accent2:#4f9dd6;
+    --grad:linear-gradient(135deg,#5fcf9b 0%,#4f9dd6 100%);
+    --shadow:0 18px 40px -18px rgba(0,0,0,.7);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:"Inter",system-ui,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  h1,h2,h3,h4,.disp{font-family:"Space Grotesk","Inter",sans-serif;}
+  a{color:#8fc7ec;text-decoration:none;} a:hover{text-decoration:underline;}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 24px;}
+  .gradtext{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;}
+
+  /* ---------- Nav ---------- */
+  nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(10px);background:rgba(11,15,23,.72);border-bottom:1px solid var(--rule);}
+  nav .row{display:flex;align-items:center;justify-content:space-between;height:60px;}
+  .logo{font-family:"Space Grotesk";font-weight:700;font-size:1.05rem;letter-spacing:.5px;}
+  .logo .dot{color:var(--accent);}
+  .navlinks{display:flex;gap:22px;}
+  .navlinks a{color:var(--muted);font-size:.9rem;font-weight:500;text-decoration:none;}
+  .navlinks a:hover{color:var(--text);}
+  @media(max-width:680px){.navlinks{display:none;}}
+
+  /* ---------- Hero ---------- */
+  .hero{position:relative;padding:104px 0 96px;overflow:hidden;border-bottom:1px solid var(--rule);}
+  .hero .blob{position:absolute;border-radius:50%;filter:blur(90px);opacity:.32;z-index:0;}
+  .blob.a{width:520px;height:520px;background:#2e8c66;top:-160px;right:-80px;animation:float1 14s ease-in-out infinite;}
+  .blob.b{width:460px;height:460px;background:#2f6fa8;bottom:-200px;left:-120px;animation:float2 17s ease-in-out infinite;}
+  @keyframes float1{50%{transform:translate(-40px,40px) scale(1.08);}}
+  @keyframes float2{50%{transform:translate(40px,-30px) scale(1.06);}}
+  .hero .grid{position:absolute;inset:0;z-index:0;background-image:linear-gradient(var(--rule) 1px,transparent 1px),linear-gradient(90deg,var(--rule) 1px,transparent 1px);background-size:46px 46px;opacity:.10;mask-image:radial-gradient(circle at 50% 30%,#000 40%,transparent 78%);}
+  .hero .inner{position:relative;z-index:1;max-width:780px;}
+  .eyebrow{display:inline-block;font-size:.78rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent);border:1px solid rgba(95,207,155,.35);background:rgba(95,207,155,.07);padding:5px 12px;border-radius:30px;}
+  .hero h1{font-size:3.5rem;font-weight:700;line-height:1.05;margin:20px 0 6px;letter-spacing:-1px;}
+  .hero .role{font-size:1.45rem;color:#cdd9e3;font-weight:500;}
+  .hero p{color:var(--muted);font-size:1.1rem;margin-top:18px;max-width:660px;}
+  .cta{margin-top:28px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;}
+  .btn{padding:11px 20px;border-radius:8px;font-size:.94rem;font-weight:600;border:1px solid transparent;transition:transform .15s ease,box-shadow .15s ease;}
+  .btn.primary{background:var(--grad);color:#06231a;box-shadow:0 10px 24px -10px rgba(95,207,155,.6);}
+  .btn.ghost{background:transparent;color:#cdd9e3;border-color:var(--rule);}
+  .btn:hover{transform:translateY(-2px);text-decoration:none;}
+  .btn.ghost:hover{border-color:var(--accent);color:#fff;}
+  .avail{margin-top:22px;color:var(--muted);font-size:.92rem;display:flex;align-items:center;gap:8px;}
+  .pulse{width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 0 rgba(95,207,155,.6);animation:pulse 2s infinite;}
+  @keyframes pulse{70%{box-shadow:0 0 0 9px rgba(95,207,155,0);}100%{box-shadow:0 0 0 0 rgba(95,207,155,0);}}
+
+  /* ---------- Sections ---------- */
+  section{padding:80px 0;border-bottom:1px solid var(--rule);scroll-margin-top:64px;}
+  .lead{display:flex;align-items:center;gap:12px;margin-bottom:8px;}
+  .lead .num{font-family:"Space Grotesk";font-size:.9rem;font-weight:700;color:var(--accent);}
+  .lead .bar{height:1px;flex:1;background:linear-gradient(90deg,var(--accent),transparent);opacity:.5;}
+  h2{font-size:1.9rem;font-weight:700;letter-spacing:-.5px;}
+  .sub{color:var(--muted);margin:8px 0 30px;font-size:1rem;max-width:780px;}
+
+  /* ---------- About + stats ---------- */
+  .about{display:grid;grid-template-columns:1.3fr 1fr;gap:36px;align-items:center;}
+  .about p{color:#c2cdd9;font-size:1.05rem;}
+  .stats{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .stat{background:var(--panel);border:1px solid var(--rule);border-radius:12px;padding:18px;transition:transform .18s,border-color .18s;}
+  .stat:hover{transform:translateY(-3px);border-color:var(--accent);}
+  .stat .big{font-family:"Space Grotesk";font-size:1.9rem;font-weight:700;}
+  .stat .lbl{color:var(--muted);font-size:.82rem;margin-top:2px;}
+
+  /* ---------- Skills ---------- */
+  .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;}
+  .skillcol{background:var(--panel);border:1px solid var(--rule);border-radius:12px;padding:18px 20px;transition:transform .18s,border-color .18s;}
+  .skillcol:hover{transform:translateY(-3px);border-color:var(--accent);}
+  .skillcol h4{font-size:.82rem;text-transform:uppercase;letter-spacing:1.2px;color:var(--accent);margin-bottom:10px;}
+  .skillcol .ch{display:flex;flex-wrap:wrap;gap:7px;}
+  .ch span{background:var(--chip);border:1px solid var(--rule);color:#cdd9e3;padding:4px 11px;border-radius:20px;font-size:.82rem;}
+
+  /* ---------- Card grids (titles / experiments) ---------- */
+  .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(248px,1fr));gap:20px;}
+  .card{background:var(--panel);border:1px solid var(--rule);border-radius:14px;overflow:hidden;transition:transform .18s,border-color .18s,box-shadow .18s;}
+  .card:hover{transform:translateY(-5px);border-color:var(--accent);box-shadow:var(--shadow);}
+  .card .thumb{height:150px;background:var(--chip);border-bottom:1px solid var(--rule);display:flex;align-items:center;justify-content:center;color:#5e7388;font-size:.85rem;position:relative;overflow:hidden;}
+  .card .thumb img,.card .thumb video{width:100%;height:100%;object-fit:cover;}
+  .card a.thumb::after{content:"▶";position:absolute;color:#fff;font-size:1.7rem;text-shadow:0 2px 8px rgba(0,0,0,.8);}
+  .card .body{padding:15px 17px;}
+  .card h4{font-size:1.08rem;}
+  .card .plat{color:var(--accent);font-size:.72rem;font-weight:600;margin:3px 0 8px;text-transform:uppercase;letter-spacing:.6px;}
+  .card p{color:var(--muted);font-size:.87rem;}
+
+  /* ---------- Featured tools (project rows) ---------- */
+  .project{display:grid;grid-template-columns:1.05fr 1fr;gap:30px;align-items:center;padding:26px 0;border-top:1px solid var(--rule);}
+  .project:first-of-type{border-top:none;}
+  .project:nth-child(even) .media{order:-1;}
+  .pnum{font-family:"Space Grotesk";font-size:.8rem;font-weight:700;color:var(--accent);letter-spacing:1px;}
+  .project h3{font-size:1.35rem;margin:4px 0;}
+  .project .tagline{color:var(--accent);font-weight:600;font-size:.9rem;margin-bottom:10px;}
+  .project p{color:#b7c3cf;font-size:.96rem;}
+  .project .chips{margin-top:14px;display:flex;flex-wrap:wrap;gap:7px;}
+  .project .chips span{background:var(--chip);border:1px solid var(--rule);color:#bcd;padding:3px 10px;border-radius:20px;font-size:.78rem;}
+  .media{background:var(--panel2);border:1px solid var(--rule);border-radius:14px;overflow:hidden;min-height:230px;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow);}
+  .media img,.media video{width:100%;height:100%;object-fit:cover;display:block;}
+
+  /* ---------- Contact ---------- */
+  .contact{text-align:center;border-bottom:none;}
+  .contact h2{font-size:2.2rem;}
+  .contact .grad-card{background:linear-gradient(135deg,rgba(95,207,155,.12),rgba(79,157,214,.12));border:1px solid var(--rule);border-radius:18px;padding:50px 30px;}
+  .contact .links{margin-top:22px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+  footer{padding:26px 0;text-align:center;color:var(--muted);font-size:.85rem;}
+
+  /* ---------- Reveal ---------- */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .6s ease,transform .6s ease;}
+  .reveal.in{opacity:1;transform:none;}
+
+  @media(max-width:760px){
+    .hero h1{font-size:2.4rem;} .hero .role{font-size:1.15rem;}
+    .about,.project,.project:nth-child(even){grid-template-columns:1fr;}
+    .project:nth-child(even) .media{order:0;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap row">
+    <div class="logo">Esam El-Khouly<span class="dot">.</span></div>
+    <div class="navlinks">
+      <a href="#tools">Tools</a>
+      <a href="#titles">Titles</a>
+      <a href="#experiments">Experiments</a>
+      <a href="#skills">Skills</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="blob a"></div><div class="blob b"></div><div class="grid"></div>
+  <div class="wrap inner">
+    <span class="eyebrow">Senior Game Engineer · Unity</span>
+    <h1>Passionate about making <span class="gradtext">games &amp; tools</span> — and supporting my team.</h1>
+    <div class="role">Gameplay · tools &amp; DevEx · graphics · console &amp; CI/CD</div>
+    <p>A long run in indie and small studios made me a broad generalist — gameplay, UI, graphics, console, and build infrastructure. What I enjoy most is making my teammates' work easier, which is what drew me to building tools; the reusable engines, editors, and pipelines here grew out of that. Shipped across PC, Meta Quest, and Switch.</p>
+    <div class="cta">
+      <a class="btn primary" href="#tools">View my work</a>
+      <a class="btn ghost" href="resume.pdf">Résumé (PDF)</a>
+      <a class="btn ghost" href="mailto:esam.k.elkholy@gmail.com">Email</a>
+      <a class="btn ghost" href="https://github.com/esamelkholy">GitHub</a>
+    </div>
+    <div class="avail"><span class="pulse"></span> Open to remote roles · Egypt (UTC+2/+3, full CET/EET overlap) · English &amp; Arabic, conversational Japanese</div>
+  </div>
+</header>
+
+<!-- ============ FEATURED TOOLS ============ -->
+<section id="tools">
+  <div class="wrap reveal">
+    <div class="lead"><span class="num">01</span><h2>Featured Tools &amp; Systems</h2><span class="bar"></span></div>
+    <p class="sub">Reusable developer infrastructure built at Skeleton Crew Studio — building these for my team is the part of the job I love most.</p>
+
+    <div class="project">
+      <div>
+        <div class="pnum">TOOL 01</div>
+        <h3>UI Studio</h3>
+        <div class="tagline">WYSIWYG uGUI authoring + screen routing · adopted by 3 projects</div>
+        <p>A standalone Unity package that turns uGUI screen-building into a visual workflow. The editor side pairs a <b>Flow Graph</b> — a node graph of every screen and the navigation between them, with per-screen breakpoints and a Play-Mode navigation breadcrumb — with a <b>WYSIWYG Screen Editor</b> (anchor presets, smart guides, drag/resize, multi-resolution preview) and familiar Hierarchy/Properties/Palette panels. The runtime side is a <b>ScreenManager</b> that owns the transition pipeline (fade, timed/manual wait, custom) with ScriptableObject-based screen graphs and transitions. Teams stand up and rewire a whole game flow visually instead of hand-coding scene changes.</p>
+        <div class="chips"><span>Unity Editor</span><span>UI Toolkit</span><span>uGUI</span><span>Runtime Routing</span><span>Reusable Package</span></div>
+      </div>
+      <div class="media" style="background:#0b1118;"><video src="Assets/ui-studio-demo.mp4" poster="Assets/UIStudioScreenshot.png" autoplay muted loop playsinline></video></div>
+    </div>
+
+    <div class="project">
+      <div>
+        <div class="pnum">TOOL 02</div>
+        <h3>VN Engine &amp; Story Navigator</h3>
+        <div class="tagline">Reusable VN engine + Yarn story-graph tool · ~50% less debugging/testing time, reused across 2 projects</div>
+        <p>A reusable, installable Unity <b>visual novel engine</b> (localization-aware, with a sample VN included). Its standout tool is the <b>Story Navigator</b>: it parses <code>.yarn</code> files into a directed dependency graph of story nodes and renders them on an interactive canvas with filtering, auto-layout, sticky-note annotation, pathfinding between nodes, a <b>play-mode debug runner</b>, and <b>save-file integration</b> — turning opaque branching dialogue into a graph the whole team can read, trace, and debug. Built on a clean three-tier architecture (framework → VN domain → game extension).</p>
+        <div class="chips"><span>Unity Package</span><span>Yarn Spinner</span><span>Node Graph</span><span>Localization</span><span>Save Integration</span></div>
+      </div>
+      <div class="media"><img src="Assets/StoryNavigator.png" alt="Story Navigator — Yarn dependency graph"></div>
+    </div>
+
+    <div class="project">
+      <div>
+        <div class="pnum">TOOL 03</div>
+        <h3>Node Canvas — Reusable Editor Framework</h3>
+        <div class="tagline">One framework, two shipping tools</div>
+        <p>A generic, <b>domain-free node-graph framework</b> for Unity editor tools, built on UI Toolkit with a generics-based core (<code>NodeGraphCanvas&lt;TNode,TEdge&gt;</code>): pan/zoom viewport with level-of-detail culling, bezier/polyline edges with reroute points, collapsible group bands, an undo/redo command stack, box and multi-select, a persistence hook for custom layouts, and a metadata layer for category badges and isolation dimming. It has zero references to any game code. <b>This is the shared foundation under both UI Studio's Flow Graph and the Story Navigator</b>, and reusable for quest editors, state machines, or skill trees.</p>
+        <div class="chips"><span>UI Toolkit</span><span>Generics / Framework Design</span><span>Custom Rendering (Painter2D)</span><span>Undo/Redo</span><span>Reusability</span></div>
+      </div>
+      <div class="media" style="background:#0f1620;"><img src="images/node-canvas.svg" alt="Node Canvas architecture" style="object-fit:contain;padding:12px;"></div>
+    </div>
+
+    <div class="project">
+      <div>
+        <div class="pnum">TOOL 04</div>
+        <h3>Jenkins Build Tool &amp; Console Pipeline</h3>
+        <div class="tagline">Unity↔Jenkins CI/CD + PS5/Switch support · adopted by 5 projects, ~70% faster build &amp; test</div>
+        <p>A Unity editor tool that bridges Unity and Jenkins: trigger and monitor builds without leaving the editor, a <b>template-based Jenkinsfile generator</b>, and a <b>Quick-Build</b> mode that auto-creates temporary commits and timestamped CI branches — then cleans them up — so you can build uncommitted work in seconds. Live build history, Slack notifications, and multi-provider Git integration. I extended it with full <b>PS5 and Switch console support</b>: a unified cross-platform save architecture with AES encryption and double-buffering, DualSense input, and Switch <code>nn.fs</code> filesystem handling.</p>
+        <div class="chips"><span>CI/CD</span><span>Jenkins / Groovy</span><span>Build Automation</span><span>PS5 SDK</span><span>Switch SDK</span><span>DevEx</span></div>
+      </div>
+      <div class="media"><img src="Assets/JenkinsBuildTool.png" alt="Jenkins Build Tool window"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SHIPPED TITLES ============ -->
+<section id="titles">
+  <div class="wrap reveal">
+    <div class="lead"><span class="num">02</span><h2>Shipped Titles</h2><span class="bar"></span></div>
+    <p class="sub">Production work across PC, VR, and console — gameplay systems, tools, and optimization.</p>
+    <div class="cards">
+      <div class="card">
+        <div class="thumb"><video src="Assets/fantasketch.mp4" poster="Assets/fantasketch.jpg" autoplay muted loop playsinline></video></div>
+        <div class="body"><h4>Fantasketch</h4><div class="plat">PC · Steam</div>
+          <p>A puzzle-action game where the characters you draw come to life and move. <a href="https://store.steampowered.com/app/3844280/Fantasketch/">Steam ↗</a></p></div>
+      </div>
+      <div class="card">
+        <div class="thumb"><video src="Assets/twinsoul.mp4" poster="Assets/twinsoul.jpg" autoplay muted loop playsinline></video></div>
+        <div class="body"><h4>TwinSoul</h4><div class="plat">PC · Steam (Demo)</div>
+          <p>An upcoming music-action game set in mythological Japan. <a href="https://store.steampowered.com/app/3904670/Twin_Soul_Demo/">Steam ↗</a></p></div>
+      </div>
+      <div class="card">
+        <div class="thumb"><video src="Assets/dgh-loop.mp4" poster="Assets/dgh-loop.jpg" autoplay muted loop playsinline></video></div>
+        <div class="body"><h4>Death Game Hotel</h4><div class="plat">Meta Quest · Steam · VR</div>
+          <p>An intense VR strategy battle, live on Meta Quest and Steam. <a href="https://www.meta.com/experiences/death-game-hotel-a-white-owls-game/7371422382882960/">Meta ↗</a></p></div>
+      </div>
+      <div class="card">
+        <div class="thumb"><img src="Assets/autoliv.png" alt="Autoliv"></div>
+        <div class="body"><h4>Autoliv</h4><div class="plat">Interactive · Product Viz</div>
+          <p>An interactive product-visualization experience for the world's largest automotive safety supplier. <a href="https://unity.com/resources/autoliv">Case study ↗</a></p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERIMENTS ============ -->
+<section id="experiments">
+  <div class="wrap reveal">
+    <div class="lead"><span class="num">03</span><h2>Experiments &amp; Graphics R&amp;D</h2><span class="bar"></span></div>
+    <p class="sub">Personal explorations into GPU compute, shaders, mesh processing, and networking — the lower-level side of my work.</p>
+    <div class="cards">
+      <div class="card">
+        <a class="thumb" href="https://www.youtube.com/watch?v=GVTXc7cteQI"><img src="https://img.youtube.com/vi/GVTXc7cteQI/hqdefault.jpg" alt="Happy Voxels"></a>
+        <div class="body"><h4>Happy Voxels</h4><div class="plat">Photon Fusion · Voxelization</div>
+          <p>A multiplayer prototype where players see real-time mesh voxelization, networked with Photon Fusion.</p></div>
+      </div>
+      <div class="card">
+        <a class="thumb" href="https://www.youtube.com/watch?v=lKxf53BgBqM"><img src="https://img.youtube.com/vi/lKxf53BgBqM/hqdefault.jpg" alt="GPU mesh voxelization with physics"></a>
+        <div class="body"><h4>GPU Voxelization + Physics</h4><div class="plat">Unity · GPU Compute</div>
+          <p>GPU-accelerated mesh voxelization in Unity3D, extended with a physics simulation on the generated voxels.</p></div>
+      </div>
+      <div class="card">
+        <a class="thumb" href="https://www.youtube.com/watch?v=yr7MDtvkF3w"><img src="https://img.youtube.com/vi/yr7MDtvkF3w/hqdefault.jpg" alt="3D printing effect"></a>
+        <div class="body"><h4>3D-Printing Shader Effect</h4><div class="plat">Unity · Shaders</div>
+          <p>A build-up "3D printing" material effect inspired by Death Stranding, authored in Unity3D.</p></div>
+      </div>
+      <div class="card">
+        <a class="thumb" href="https://www.youtube.com/watch?v=qPj_ZgFG8fg"><img src="https://img.youtube.com/vi/qPj_ZgFG8fg/hqdefault.jpg" alt="Mesh deformation"></a>
+        <div class="body"><h4>Real-Time Mesh Deformation</h4><div class="plat">Unity · Geometry</div>
+          <p>Experiments with runtime mesh deformation in Unity3D.</p></div>
+      </div>
+      <div class="card">
+        <a class="thumb" href="https://www.youtube.com/watch?v=I1fRsNBu9OE"><img src="https://img.youtube.com/vi/I1fRsNBu9OE/hqdefault.jpg" alt="Mesh voxelization"></a>
+        <div class="body"><h4>Mesh Voxelization (GPU)</h4><div class="plat">Unity · GPU Compute</div>
+          <p>The original GPU-accelerated mesh-voxelization study in Unity3D.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SKILLS ============ -->
+<section id="skills">
+  <div class="wrap reveal">
+    <div class="lead"><span class="num">04</span><h2>Skills</h2><span class="bar"></span></div>
+    <div class="skills">
+      <div class="skillcol"><h4>Languages</h4><div class="ch"><span>C# (proficient)</span><span>C++ (knowledgeable)</span></div></div>
+      <div class="skillcol"><h4>Engines</h4><div class="ch"><span>Unity3D (expert)</span><span>Unreal (familiar)</span></div></div>
+      <div class="skillcol"><h4>Platforms</h4><div class="ch"><span>PC</span><span>Meta Quest / VR</span><span>Nintendo Switch</span></div></div>
+      <div class="skillcol"><h4>Tooling</h4><div class="ch"><span>UI Toolkit</span><span>Editor Tools</span><span>Addressables</span><span>Yarn Spinner</span><span>Photon</span></div></div>
+      <div class="skillcol"><h4>DevOps</h4><div class="ch"><span>Jenkins CI/CD</span><span>Build Automation</span><span>Git</span><span>Console SDK Pipelines</span></div></div>
+      <div class="skillcol"><h4>Graphics</h4><div class="ch"><span>Shaders</span><span>GPU Compute</span><span>Mesh Processing</span><span>Optimization</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about">
+  <div class="wrap reveal">
+    <div class="lead"><span class="num">05</span><h2>About</h2><span class="bar"></span></div>
+    <div class="about">
+      <div>
+        <p>I'm a senior Unity engineer and a generalist — years in indie and small studios meant wearing every hat: gameplay, UI, graphics, console, and build infrastructure. The thread through all of it is that I love supporting my team, and that's what pulled me into building tools — the reusable engines, editors, and pipelines that make everyone's work faster. I founded my studio's internal learning center to share what we learn across projects, and I explore graphics and GPU programming on the side. I'm open to remote senior Unity roles.</p>
+      </div>
+      <div class="stats">
+        <div class="stat"><div class="big gradtext">5+</div><div class="lbl">Years shipping games</div></div>
+        <div class="stat"><div class="big gradtext">3</div><div class="lbl">Platforms: PC · Quest · Switch</div></div>
+        <div class="stat"><div class="big gradtext">3</div><div class="lbl">Reusable in-house tools/frameworks</div></div>
+        <div class="stat"><div class="big gradtext">~70%</div><div class="lbl">Faster build &amp; test cycles</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" class="contact">
+  <div class="wrap reveal">
+    <div class="grad-card">
+      <h2>Happy to connect!</h2>
+      <p class="sub" style="margin:10px auto 0;max-width:560px;">Open to remote senior Unity / tools / DevEx roles. The fastest way to reach me is email.</p>
+      <div class="links">
+        <a class="btn primary" href="mailto:esam.k.elkholy@gmail.com">esam.k.elkholy@gmail.com</a>
+        <a class="btn ghost" href="https://linkedin.com/in/esam-khaled-el-kholy">LinkedIn</a>
+        <a class="btn ghost" href="https://github.com/esamelkholy">GitHub</a>
+        <a class="btn ghost" href="https://www.youtube.com/channel/UCGvd_92JK478NMZ7wjQICvw">YouTube</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">© Esam El-Khouly</div></footer>
+
+<script>
+  const io = new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

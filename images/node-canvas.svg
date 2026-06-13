@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 660" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#5fcf9b"/>
+    </marker>
+    <style>
+      .title{fill:#ffffff;font-size:20px;font-weight:700;}
+      .subt{fill:#9fb0bf;font-size:12.5px;}
+      .tier{fill:#5fcf9b;font-size:11px;font-weight:700;letter-spacing:1.5px;}
+      .box{fill:#16202c;stroke:#2f3e4d;stroke-width:1.2;}
+      .fw{fill:#13241d;stroke:#3a6f56;stroke-width:1.4;}
+      .h{fill:#ffffff;font-size:14px;font-weight:700;}
+      .m{fill:#9fb0bf;font-size:11px;}
+      .chip{fill:#1c2a22;stroke:#3a6f56;stroke-width:1;}
+      .ct{fill:#bfe6d2;font-size:10.5px;}
+      .lbl{fill:#7fb2d6;font-size:10px;font-style:italic;}
+      .cap{fill:#8aa0b2;font-size:11.5px;}
+      .edge{stroke:#4a6c87;stroke-width:1.6;fill:none;}
+      .edge-fw{stroke:#5fcf9b;stroke-width:1.8;fill:none;}
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="1000" height="660" rx="14" fill="#0f1620"/>
+
+  <!-- Title -->
+  <text x="34" y="40" class="title">Node Canvas — one reusable framework, two shipping tools</text>
+  <text x="34" y="62" class="subt">A generic UI-Toolkit node-graph engine powering UI Studio's Flow Graph and the VN engine's Story Navigator.</text>
+
+  <!-- Tier labels (left rail) -->
+  <text x="22" y="132" class="tier">GAME</text>
+  <text x="22" y="252" class="tier">DOMAIN</text>
+  <text x="22" y="470" class="tier">FRAMEWORK</text>
+
+  <!-- ===================== GAME LAYER ===================== -->
+  <rect x="130" y="98" width="410" height="74" rx="9" class="box"/>
+  <text x="150" y="124" class="h">Your uGUI Project</text>
+  <text x="150" y="144" class="m">GameScreen prefabs · ScreenTrigger buttons</text>
+  <text x="150" y="161" class="m">(drop-in, no per-screen wiring code)</text>
+
+  <rect x="560" y="98" width="410" height="74" rx="9" class="box"/>
+  <text x="580" y="124" class="h">Game Project</text>
+  <text x="580" y="144" class="m">GameNavigatorExtension : INavigatorExtension</text>
+  <text x="580" y="161" class="m">game-specific parsers · save ops · enrichers</text>
+
+  <!-- ===================== DOMAIN LAYER ===================== -->
+  <rect x="130" y="194" width="410" height="138" rx="9" class="box"/>
+  <text x="150" y="220" class="h">UI Studio — Flow Graph + Routing</text>
+  <text x="150" y="244" class="m">Visual screen-flow node graph</text>
+  <text x="150" y="262" class="m">WYSIWYG Screen Editor (anchors, smart guides,</text>
+  <text x="150" y="278" class="m">multi-resolution preview)</text>
+  <text x="150" y="300" class="m">Runtime: ScreenManager · transition pipeline</text>
+  <text x="150" y="318" class="m">ScreenGraph / ScreenTransition (ScriptableObjects)</text>
+
+  <rect x="560" y="194" width="410" height="138" rx="9" class="box"/>
+  <text x="580" y="220" class="h">Story Navigator — VN Engine</text>
+  <text x="580" y="244" class="m">Parses .yarn → directed dependency graph</text>
+  <text x="580" y="262" class="m">Filtering · auto-layout · pathfinding</text>
+  <text x="580" y="278" class="m">Sticky-note annotation · file view</text>
+  <text x="580" y="300" class="m">Play-mode debug runner</text>
+  <text x="580" y="318" class="m">Save-file integration · NavigatorProfile</text>
+
+  <!-- Game -> Domain connectors -->
+  <path class="edge" d="M335,172 L335,194" marker-end="url(#arrow)"/>
+  <path class="edge" d="M765,172 L765,194" marker-end="url(#arrow)"/>
+
+  <!-- Domain -> Framework connectors -->
+  <path class="edge-fw" d="M335,332 L335,386" marker-end="url(#arrow)"/>
+  <path class="edge-fw" d="M765,332 L765,386" marker-end="url(#arrow)"/>
+  <text x="344" y="360" class="lbl">builds on</text>
+  <text x="774" y="360" class="lbl">builds on</text>
+
+  <!-- ===================== FRAMEWORK LAYER ===================== -->
+  <rect x="130" y="386" width="840" height="190" rx="10" class="fw"/>
+  <text x="150" y="414" class="h">Node Canvas — Framework Layer</text>
+  <text x="150" y="434" class="m">Domain-free · zero references to game code · built on UI Toolkit (Painter2D rendering).</text>
+  <text x="150" y="451" class="m">Subclass via GraphContext&lt;TNode,TEdge&gt; + IMetadataProvider&lt;TNode&gt; → plug in your data, get a full graph editor.</text>
+
+  <!-- component chips row 1 -->
+  <rect x="150" y="468" width="196" height="32" rx="6" class="chip"/><text x="248" y="488" class="ct" text-anchor="middle">NodeGraphCanvas&lt;T,E&gt;</text>
+  <rect x="358" y="468" width="196" height="32" rx="6" class="chip"/><text x="456" y="488" class="ct" text-anchor="middle">Viewport · pan/zoom + LOD</text>
+  <rect x="566" y="468" width="196" height="32" rx="6" class="chip"/><text x="664" y="488" class="ct" text-anchor="middle">Edges · bezier/polyline</text>
+  <rect x="774" y="468" width="180" height="32" rx="6" class="chip"/><text x="864" y="488" class="ct" text-anchor="middle">Group layout</text>
+
+  <!-- component chips row 2 -->
+  <rect x="150" y="508" width="196" height="32" rx="6" class="chip"/><text x="248" y="528" class="ct" text-anchor="middle">Undo/Redo command stack</text>
+  <rect x="358" y="508" width="196" height="32" rx="6" class="chip"/><text x="456" y="528" class="ct" text-anchor="middle">Selection · box + multi</text>
+  <rect x="566" y="508" width="196" height="32" rx="6" class="chip"/><text x="664" y="528" class="ct" text-anchor="middle">Decorators · sticky notes</text>
+  <rect x="774" y="508" width="180" height="32" rx="6" class="chip"/><text x="864" y="528" class="ct" text-anchor="middle">GraphNavigator · metadata</text>
+
+  <!-- Caption -->
+  <text x="500" y="612" class="cap" text-anchor="middle">One framework → two shipping tools. Also reusable for quest editors, state machines, and skill trees.</text>
+</svg>
