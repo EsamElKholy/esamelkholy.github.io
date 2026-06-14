@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 560" font-family="Inter, Segoe UI, Helvetica Neue, Arial, sans-serif">
+  <defs>
+    <marker id="ar" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#5fcf9b"/>
+    </marker>
+    <style>
+      .title{fill:#fff;font-size:19px;font-weight:700;}
+      .sub{fill:#9fb0bf;font-size:12px;}
+      .box{fill:#16202e;stroke:#2f3e4d;stroke-width:1.2;}
+      .hot{fill:#13241d;stroke:#3a6f56;stroke-width:1.3;}
+      .h{fill:#fff;font-size:13px;font-weight:700;}
+      .m{fill:#9fb0bf;font-size:10.5px;}
+      .snum{fill:#5fcf9b;font-size:10.5px;font-weight:700;}
+      .chip{fill:#1e2a36;stroke:#2f3e4d;stroke-width:1;}
+      .ct{fill:#bcd0de;font-size:10px;}
+      .chiphot{fill:#1c2a22;stroke:#3a6f56;stroke-width:1;}
+      .cth{fill:#bfe6d2;font-size:10px;font-weight:600;}
+      .lbl{fill:#7fb2d6;font-size:9.5px;font-style:italic;}
+      .edge{stroke:#5fcf9b;stroke-width:1.8;fill:none;}
+      .fb{stroke:#4f9dd6;stroke-width:1.4;fill:none;stroke-dasharray:5 4;}
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="1000" height="560" rx="14" fill="#0b1118"/>
+
+  <text x="32" y="38" class="title">Jenkins Build Tool &amp; Console Pipeline</text>
+  <text x="32" y="60" class="sub">Trigger multi-platform builds from inside Unity → Jenkins CI → console-ready artifacts — without leaving the editor.</text>
+
+  <!-- feedback loop (top) -->
+  <path class="fb" d="M575,92 L575,74 L150,74 L150,108" marker-end="url(#ar)"/>
+  <text x="360" y="69" class="lbl" text-anchor="middle">build status, history &amp; Slack alerts ↩</text>
+
+  <!-- ===== Unity Editor (the tool) ===== -->
+  <rect x="28" y="108" width="250" height="320" rx="10" class="box"/>
+  <text x="46" y="136" class="h">Unity Editor — the tool</text>
+  <text x="46" y="162" class="m">• Build Configuration (ScriptableObject)</text>
+  <text x="46" y="190" class="m">• Jenkinsfile generator (modular stages)</text>
+  <text x="46" y="218" class="m">• Quick-Build: auto temp-commit</text>
+  <text x="62" y="234" class="m">+ timestamped CI branch (auto-cleanup)</text>
+  <text x="46" y="262" class="m">• One-click trigger + live monitoring</text>
+  <text x="46" y="290" class="m">• Build history &amp; job-health view</text>
+  <text x="46" y="318" class="m">• Scripting-defines manager</text>
+  <text x="46" y="392" class="lbl">C# editor tooling · Git + Jenkins REST API</text>
+
+  <!-- ===== Git ===== -->
+  <rect x="312" y="222" width="104" height="92" rx="9" class="box"/>
+  <text x="364" y="252" class="h" text-anchor="middle">Git</text>
+  <text x="364" y="272" class="m" text-anchor="middle">GitHub / GitLab</text>
+  <text x="364" y="290" class="m" text-anchor="middle">/ custom</text>
+
+  <!-- ===== Jenkins pipeline ===== -->
+  <rect x="452" y="92" width="250" height="392" rx="10" class="box"/>
+  <text x="470" y="120" class="h">Jenkins — generated pipeline</text>
+  <text x="470" y="152" class="snum">1</text><text x="488" y="152" class="m">Setup &amp; metadata</text>
+  <text x="470" y="186" class="snum">2</text><text x="488" y="186" class="m">Checkout (branch / CI branch)</text>
+  <text x="470" y="220" class="snum">3</text><text x="488" y="220" class="m">Clean workspace</text>
+  <text x="470" y="254" class="snum">4</text><text x="488" y="254" class="m">Activate Unity license</text>
+  <text x="470" y="288" class="snum">5</text><text x="488" y="288" class="m">Unity build (batch mode)</text>
+  <text x="470" y="322" class="snum">6</text><text x="488" y="322" class="m">Validate build output</text>
+  <text x="470" y="356" class="snum">7</text><text x="488" y="356" class="m">Archive (zip / rar / 7z)</text>
+  <text x="470" y="390" class="snum">8</text><text x="488" y="390" class="m">CI-branch cleanup</text>
+  <text x="470" y="424" class="snum">9</text><text x="488" y="424" class="m">Slack notification</text>
+  <text x="470" y="462" class="lbl">templated stages · toggle each on/off</text>
+
+  <!-- ===== Build artifacts ===== -->
+  <rect x="740" y="140" width="232" height="300" rx="10" class="box"/>
+  <text x="756" y="168" class="h">Build artifacts</text>
+  <rect x="756" y="182" width="96" height="28" rx="6" class="chip"/><text x="804" y="200" class="ct" text-anchor="middle">Win64</text>
+  <rect x="860" y="182" width="96" height="28" rx="6" class="chip"/><text x="908" y="200" class="ct" text-anchor="middle">Linux</text>
+  <rect x="756" y="218" width="96" height="28" rx="6" class="chip"/><text x="804" y="236" class="ct" text-anchor="middle">Android</text>
+  <rect x="860" y="218" width="96" height="28" rx="6" class="chip"/><text x="908" y="236" class="ct" text-anchor="middle">WebGL</text>
+  <rect x="756" y="254" width="96" height="28" rx="6" class="chiphot"/><text x="804" y="272" class="cth" text-anchor="middle">PlayStation 5</text>
+  <rect x="860" y="254" width="96" height="28" rx="6" class="chiphot"/><text x="908" y="272" class="cth" text-anchor="middle">Switch</text>
+  <line x1="756" y1="300" x2="956" y2="300" stroke="#2f3e4d" stroke-width="1"/>
+  <text x="756" y="322" class="cth">Console layer I built:</text>
+  <text x="756" y="340" class="m">PS5 &amp; Switch save + input tooling</text>
+  <text x="756" y="356" class="m">— AES-encrypted, double-buffered,</text>
+  <text x="756" y="372" class="m">unified cross-platform save API,</text>
+  <text x="756" y="388" class="m">DualSense &amp; Switch nn.fs support.</text>
+
+  <!-- arrows -->
+  <path class="edge" d="M278,268 L312,268" marker-end="url(#ar)"/>
+  <text x="295" y="260" class="lbl" text-anchor="middle">push</text>
+  <path class="edge" d="M416,268 L452,268" marker-end="url(#ar)"/>
+  <text x="434" y="260" class="lbl" text-anchor="middle">trigger</text>
+  <path class="edge" d="M702,268 L740,268" marker-end="url(#ar)"/>
+  <text x="721" y="260" class="lbl" text-anchor="middle">produces</text>
+</svg>
