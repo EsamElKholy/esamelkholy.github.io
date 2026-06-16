@@ -257,7 +257,7 @@
         <div class="pnum">SUMMONER'S TALE</div>
         <h3>Summoner's Tale</h3>
         <div class="tagline">Co-developed creature-collector JRPG · coming soon to Steam</div>
-        <p>An Action RPG where taming goes beyond catching. Fight, race, and complete unique trials to recruit monsters across four classes. Build your squad, evolve them through battle, and uncover the truth behind a war that divided monsters and humans. I worked on multiple systems like the <b>localization system</b> (Arabic RTL, Japanese, and English), the <b>player-progression systems</b> — rank, quests, and dialog — and much more. In active development.</p>
+        <p>A young summoner recruits monsters through battles, races, and unique trials to rebuild the bonds between a divided world of humans and monsters. I built the <b>localization system</b> (RTLTMPro-based Arabic RTL, Japanese, and English) and architected the <b>player-progression systems</b> — rank, quests, and dialog — plus much of the game's <b>UI infrastructure</b>. In active development.</p>
         <div class="chips"><span>Unity</span><span>C#</span><span>Localization (JP / AR-RTL / EN)</span><span>UI Systems</span><span>Quests &amp; Dialog</span></div>
         <div style="margin-top:14px;"><a href="https://store.steampowered.com/app/2081350/Summoners_Tale/">Steam page ↗</a></div>
       </div>
@@ -270,8 +270,20 @@
 <section id="experiments">
   <div class="wrap reveal">
     <div class="lead"><span class="num">04</span><h2>Experiments &amp; Graphics R&amp;D</h2><span class="bar"></span></div>
-    <p class="sub">Personal explorations into GPU compute, shaders, mesh processing, and networking — most are <strong>open-source</strong> on <a href="https://github.com/esamelkholy">my GitHub</a>.</p>
+    <p class="sub">Personal explorations into GPU compute, shaders, mesh processing, C++ engines, and networking — most are <strong>open-source</strong> on <a href="https://github.com/esamelkholy">my GitHub</a>.</p>
     <div class="cards">
+      <div class="card">
+        <div class="thumb"><img src="Assets/frost-engine.jpg" alt="Frost — C++ OpenGL engine with dynamic colored point lights"></div>
+        <div class="body"><h4>Frost — C++ 3D Engine (2016)</h4><div class="plat">C++ · OpenGL · Graphics</div>
+          <p>A from-scratch OpenGL rendering engine in C++ — camera/transform/material systems, multi-light Phong shading with normal mapping, runtime shader compilation, and framebuffer post-processing. An early, self-taught graphics &amp; engine study.</p>
+          <div style="margin-top:8px;font-size:.82rem;"><a href="https://github.com/EsamElKholy/Frost-Project">GitHub ↗</a></div></div>
+      </div>
+      <div class="card">
+        <div class="thumb">C++ · allocators + math</div>
+        <div class="body"><h4>Cinder C++ Studies</h4><div class="plat">C++ · Systems</div>
+          <p>Early C++ systems work: custom memory allocators (pool / stack / double-linked) and a from-scratch vector/matrix/quaternion math library — the same math lib that powers the Frost engine. Foundational, not a maintained library.</p>
+          <div style="margin-top:8px;font-size:.82rem;"><a href="https://github.com/EsamElKholy/Cinder-Project">GitHub ↗</a></div></div>
+      </div>
       <div class="card">
         <a class="thumb" href="https://www.youtube.com/watch?v=GVTXc7cteQI"><img src="https://img.youtube.com/vi/GVTXc7cteQI/hqdefault.jpg" alt="Happy Voxels"></a>
         <div class="body"><h4>Happy Voxels</h4><div class="plat">Photon Fusion · Voxelization</div>
